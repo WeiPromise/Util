@@ -1,4 +1,4 @@
-package com.promise.util.dataUtil;
+package com.promise.util.common;
 
 import net.sourceforge.pinyin4j.PinyinHelper;
 import net.sourceforge.pinyin4j.format.HanyuPinyinCaseType;

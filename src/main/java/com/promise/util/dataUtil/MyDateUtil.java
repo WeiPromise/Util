@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by leiwei on 2019/6/22 18:27
  */
-public class DateUtil {
+public class MyDateUtil {
 
 
     /**
