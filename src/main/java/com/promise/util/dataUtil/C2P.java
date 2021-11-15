@@ -61,7 +61,7 @@ public class C2P {
         StringBuilder pinyinName = new StringBuilder();
         char[] nameChar = chines.toCharArray();
         HanyuPinyinOutputFormat defaultFormat = new HanyuPinyinOutputFormat();
-        defaultFormat.setCaseType(HanyuPinyinCaseType.UPPERCASE);
+        defaultFormat.setCaseType(HanyuPinyinCaseType.LOWERCASE);
         defaultFormat.setToneType(HanyuPinyinToneType.WITHOUT_TONE);
         for (int i = 0; i < nameChar.length; i++) {
             if (nameChar[i] > 128) {
@@ -91,8 +91,16 @@ public class C2P {
         return new String(ch);
     }
 
+    private static String firstToLowCase(String str) {
+        char[] ch = str.toCharArray();
+        if (ch[0] >= 'A' && ch[0] <= 'Z') {
+            ch[0] = (char) (ch[0] + 32);
+        }
+        return new String(ch);
+    }
+
     public static void main(String[] args) {
-        String py = getPingYin("123fff雷伟");
+        String py = converterToFirstSpell("123fff雷伟");
         System.out.println(py);
     }
 }

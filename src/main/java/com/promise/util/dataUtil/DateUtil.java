@@ -39,12 +39,16 @@ public class DateUtil {
 
         int days = ca.get(type);
 
-        for(int i=1;i<=days;i++ ){
+        ca.add(type,-(days-1));
+        Date time = ca.getTime();
+        System.out.println(sdf.format(time));
+
+        /*for(int i=1;i<=days;i++ ){
             ca.add(type,-(days-i));
             Date time = ca.getTime();
             dateList.add(sdf.format(time));
             ca.setTime(sdf.parse(date));
-        }
+        }*/
         return dateList;
     }
 
@@ -110,13 +114,11 @@ public class DateUtil {
     }
 
 
+
     public static void main(String[] args) throws ParseException {
-        List<String> mondayOfWeek = getMondayOfWeek("2019-01-19",Calendar.DAY_OF_YEAR);
 
-        for (String s : mondayOfWeek) {
-
-            System.out.println(s);
-        }
+        getMondayOfWeek("2019-06-27",Calendar.DAY_OF_WEEK);
+        
     }
     
 }
